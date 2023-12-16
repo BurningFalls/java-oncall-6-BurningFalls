@@ -7,12 +7,13 @@ import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
 public class MonthDay {
+    private int month;
+    private String day;
+
     public MonthDay(String input) {
         isValidInput(input);
         List<String> monthDay = parseWithComma(input);
         validate(monthDay);
-//
-//        this.monthDay = monthDay;
     }
 
     public void isValidInput(String input) {
@@ -40,6 +41,9 @@ public class MonthDay {
         String day = monthDay.get(1);
         isMonth1to12(month);
         isDayValidate(day);
+
+        this.month = month;
+        this.day = day;
     }
 
     public void isLengthTwo(List<String> monthDay) {
