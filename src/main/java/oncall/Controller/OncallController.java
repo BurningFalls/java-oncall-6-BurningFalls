@@ -1,5 +1,6 @@
 package oncall.Controller;
 
+import oncall.Constant.Constants;
 import oncall.Enum.Holiday;
 import oncall.Model.MonthDay;
 import oncall.Model.Workers;
@@ -13,11 +14,14 @@ public class OncallController {
     private Workers weekdayWorkers;
     private Workers weekendWorkers;
     private List<Integer> weekList;
+    private List<String> workerList;
 
     public void startOnCall() {
         receiveMonthDay();
         receiveWeekdayWorkers();
         receiveWeekendWorkers();
+
+        showWorkerList();
     }
 
     public void receiveMonthDay() {
@@ -71,14 +75,22 @@ public class OncallController {
         weekdayWorkers.isContainsAll(weekendWorkers);
     }
 
-    public void makeWeekList() {
+    public void showWorkerList() {
         List<Integer> monthCount = List.of(
                 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31
         );
         int month = monthDay.getMonth();
         int dayCount = monthCount.get(month - 1);
         weekList = new ArrayList<>();
-        for (int i = 1; i <= dayCount; i++) {
+        workerList = new ArrayList<>();
+        workerList.add("");
+
+        makeWeekList(month, dayCount);
+        makeWorkerList(dayCount);
+    }
+
+    public void makeWeekList(int month, int dayCount) {
+        for (int i = 0; i <= dayCount; i++) {
             weekList.add(0);
         }
 
@@ -91,8 +103,25 @@ public class OncallController {
             boolean isWeekend = monthDay.isWeekend(day);
 
             if (isHoliday || isWeekend) {
-                weekList.set(day - 1, 1);
+                weekList.set(day, 1);
             }
+        }
+    }
+
+    public void makeWorkerList(int dayCount) {
+        int index1 = 0;
+        int index2 = 0;
+        int length = weekdayWorkers.getSize();
+        for (int day = 1; day <= dayCount; day++) {
+            String name = "";
+            if (weekList.get(day) == Constants.WEEKDAY) {
+                name = weekdayWorkers.getWorker(index1);
+                index1 = (index1 + 1) % length;
+            } else if (weekList.get(day) == Constants.WEEKEND) {
+                name = weekendWorkers.getWorker(index2);
+                index2 = (index2 + 1) % length;
+            }
+            workerList.add(name);
         }
     }
 }

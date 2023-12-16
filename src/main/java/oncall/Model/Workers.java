@@ -80,4 +80,12 @@ public class Workers {
             throw new IllegalArgumentException("[ERROR] 평일과 휴일 비상 근무자 명단이 일치하지 않습니다.");
         }
     }
+
+    public String getWorker(int idx) {
+        return workers.get(idx);
+    }
+
+    public int getSize() {
+        return workers.size();
+    }
 }
