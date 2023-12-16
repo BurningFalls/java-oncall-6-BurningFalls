@@ -25,14 +25,32 @@ public static final int WEEKEND = 2;
 
 (3-2) `weekList`의 값이 `0`인 다음 인덱스 `nextIndex`를 찾습니다. `curIndex`와 `nextIndex`의 `workerList` 값을 변경합니다.
 
-(4) 만약 `nextIndex`가 존재하지 않는 경우, `weekdayWorkers` 또는 `weekendWorkers`에서 다음 근무자 이름을 찾아서 대입합니다.
-
 | index (일)  |   1   |  2   |  3   |  4   | 5  |  6  |
 |:----------:|:-----:|:----:|:----:|:----:|:--:|:---:|
 |  weekList  |   0   |  0   |  0   |  0   | 1  |  2  |
 | workerList |  빨강  | 주황 | 노랑 |  초록  | 파랑 | 초록  |
 
 * 이 예제에서는 `curIndex=5`에서 문제가 생기므로, 다음 `weekList` 값이 `1 or 2`인 `nextIndex=6`을 찾습니다. `5`와 `6`의 `workerList` 값을 바꾸어 다음과 같이 변합니다.
+
+(4) 만약 `nextIndex`가 존재하지 않는 경우, `weekdayWorkers` 또는 `weekendWorkers`에서 다음 근무자 이름을 찾아서 대입합니다.
+
+```java
+// 평일 비상 근무 순번
+private List<String> weekdayWorkers = List.of("빨강", "주황", "노랑", "초록", "파랑");
+```
+
+| index (일)  |   1   |  2   |  3   |  4  |  5   |  6  |
+|:----------:|:-----:|:----:|:----:|:---:|:----:|:---:|
+|  weekList  |   0   |  0   |  0   |  0  |  1   |  2  |
+| workerList |  빨강  | 주황 | 노랑 | 노랑  |  파랑  | 초록  |
+
+* 예제가 위와 같다면(뒤의 일이 더 없다고 가정), `curIndex=4`에서 문제가 생기므로, 다음 `weekList` 값이 `0`인 `nextIndex`를 찾아야 하는데 존재하지 않습니다.
+따라서, `weekdayWorkers`에서 노랑 다음의 이름인 `초록`을 찾아 해당 위치의 `workerList`에 대입합니다.
+
+| index (일)  |   1   |  2   |  3   |  4   | 5  | 6  |
+|:----------:|:-----:|:----:|:----:|:----:|:--:|:--:|
+|  weekList  |   0   |  0   |  0   |  0   | 1  | 2  |
+| workerList |  빨강  | 주황 | 노랑 |  초록  | 파랑 | 초록 |
 
 #### 2. 요구사항에서 제시한 앞의 날짜부터 순서를 변경하는 방법 외에 다른 방법이 있다면 어떤 방식이 있는지, 이 방법은 기존에 제시된 방식과 비교해 어떤 차이가 있는지 설명하세요. (선택)
 
