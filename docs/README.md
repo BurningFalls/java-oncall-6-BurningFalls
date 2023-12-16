@@ -27,7 +27,7 @@
 - [X] 평일 휴일 List 만들기: OncallController.makeWeekList
 - [X] 근무 명단 만들기: OncallController.makeWorkerList
 - [X] 다음 index의 근무자 이름 가져오기: Workers.getNextName
-- [] 다음 index 가져오기: OncallController.getNextIndex
+- [X] 다음 index 가져오기: OncallController.getNextIndex
 - [] 다음 근무자 이름 찾기: OncallController.findNextName
 - [] 서로 위치 바꾸기: OncallController.changePosition
 - [] 근무 명단 유효성 체크하기 (유효하지 않으면 위치 바꾸기): OncallController.isWorkerListValidate

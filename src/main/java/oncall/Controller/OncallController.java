@@ -165,15 +165,15 @@ public class OncallController {
 //        return weekendWorkers.getNextName(name);
 //    }
 
-//    public int getNextIndex(boolean isWeekday, int index) {
-//        int month = monthDay.getMonth();
-//        int dayCount = monthCount.get(month - 1);
-//        for (int i = index + 1; i <= dayCount; i++) {
-//            boolean flag = (weekList.get(i) == Constants.WEEKDAY);
-//            if (isWeekday == flag) {
-//                return i;
-//            }
-//        }
-//        return -1;
-//    }
+    public int getNextIndex(boolean isWeekday, int index) {
+        int month = monthDay.getMonth();
+        int dayCount = monthCount.get(month - 1);
+        for (int i = index + 1; i <= dayCount; i++) {
+            boolean flag = (weekList.get(i) == Constants.WEEKDAY);
+            if (isWeekday == flag) {
+                return i;
+            }
+        }
+        return -1;
+    }
 }
