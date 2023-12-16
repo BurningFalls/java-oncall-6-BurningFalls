@@ -24,7 +24,7 @@
 - [X] 공휴일에 일치하는 날짜인지 확인: Holiday.isContains
 - [X] 주말인지 계산하기: MonthDay.isWeekend
 - [X] 평일 휴일 List 계산하기: OncallController.calculateWeekList
-- [] 평일 휴일 List 만들기: OncallController.makeWeekList
+- [X] 평일 휴일 List 만들기: OncallController.makeWeekList
 - [] 근무 명단 만들기: OncallController.makeWorkerList
 - [] 서로 위치 바꾸기: OncallController.changePosition
 - [] 근무 명단 유효성 체크하기 (유효하지 않으면 위치 바꾸기): OncallController.isWorkerListValidate
