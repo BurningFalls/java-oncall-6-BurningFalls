@@ -9,7 +9,7 @@ import java.util.stream.Collectors;
 public class MonthDay {
     public MonthDay(String input) {
         isValidInput(input);
-//        List<String> monthDay = parseWithComma(input);
+        List<String> monthDay = parseWithComma(input);
 //        validate(monthDay);
 //
 //        this.monthDay = monthDay;
@@ -26,11 +26,11 @@ public class MonthDay {
         }
     }
 
-//    public List<String> parseWithComma(String input) {
-//        return Arrays.stream(input.split(","))
-//                .map(String::trim)
-//                .filter(str -> !str.isEmpty())
-//                // .map(Integer::parseInt)
-//                .collect(Collectors.toList());
-//    }
+    public List<String> parseWithComma(String input) {
+        return Arrays.stream(input.split(","))
+                .map(String::trim)
+                .filter(str -> !str.isEmpty())
+                // .map(Integer::parseInt)
+                .collect(Collectors.toList());
+    }
 }
