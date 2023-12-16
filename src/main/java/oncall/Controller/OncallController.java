@@ -132,15 +132,15 @@ public class OncallController {
         }
     }
 
-//    public void isWorkerListValidate() {
-//        for (int i = 1; i < workerList.size(); i++) {
-//            String prevName = workerList.get(i - 1);
-//            String curName = workerList.get(i);
-//            if (prevName.equals(curName)) {
-//                changePosition(i);
-//            }
-//        }
-//    }
+    public void isWorkerListValidate() {
+        for (int i = 1; i < workerList.size(); i++) {
+            String prevName = workerList.get(i - 1);
+            String curName = workerList.get(i);
+            if (prevName.equals(curName)) {
+                changePosition(i);
+            }
+        }
+    }
 
     public void changePosition(int index) {
         boolean isWeekday = (weekList.get(index) == Constants.WEEKDAY);

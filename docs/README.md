@@ -30,6 +30,6 @@
 - [X] 다음 index 가져오기: OncallController.getNextIndex
 - [X] 다음 근무자 이름 찾기: OncallController.findNextName
 - [X] 서로 위치 바꾸기: OncallController.changePosition
-- [] 근무 명단 유효성 체크하기 (유효하지 않으면 위치 바꾸기): OncallController.isWorkerListValidate
+- [X] 근무 명단 유효성 체크하기: OncallController.isWorkerListValidate
 - [] 근무 명단 전체 내용 보여주기: OncallController.makeAndShowWorkerList
 - [X] 근무 명단 출력하기: OutputView.printWorkerList
