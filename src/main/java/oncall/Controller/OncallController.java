@@ -11,10 +11,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class OncallController {
-    private static final List<Integer> monthCount = List.of(
-            31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31
-    );
-
     private MonthDay monthDay;
     private Workers weekdayWorkers;
     private Workers weekendWorkers;
@@ -76,7 +72,7 @@ public class OncallController {
 
     public void makeAndShowWorkerList() {
         int month = monthDay.getMonth();
-        int dayCount = monthCount.get(month - 1);
+        int dayCount = Constants.MONTH_COUNT.get(month - 1);
         weekList = new ArrayList<>();
         weekList.add(0);
         workerList = new ArrayList<>();
@@ -161,7 +157,7 @@ public class OncallController {
 
     public int getNextIndex(boolean isWeekday, int index) {
         int month = monthDay.getMonth();
-        int dayCount = monthCount.get(month - 1);
+        int dayCount = Constants.MONTH_COUNT.get(month - 1);
         for (int i = index + 1; i <= dayCount; i++) {
             boolean flag = (weekList.get(i) == Constants.WEEKDAY);
             if (isWeekday == flag) {
