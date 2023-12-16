@@ -37,6 +37,7 @@ public class WorkerList {
 
     public void validate(List<String> workerList) {
         isCount5to35(workerList);
+        isNameUnder5Char(workerList);
     }
 
     public void isCount5to35(List<String> workerList) {
@@ -44,4 +45,14 @@ public class WorkerList {
             throw new IllegalArgumentException("[ERROR] 근무자는 5명 이상 35명 이하여야 합니다.");
         }
     }
+
+    public void isNameUnder5Char(List<String> workerList) {
+        for (int i = 0; i < workerList.size(); i++) {
+            String name = workerList.get(i);
+            if (name.length() > 5) {
+                throw new IllegalArgumentException("[ERROR] 근무자의 이름은 5자 이하여야 합니다.");
+            }
+        }
+    }
+
 }
