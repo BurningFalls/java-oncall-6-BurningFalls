@@ -21,7 +21,7 @@ public class OncallController {
         receiveWeekdayWorkers();
         receiveWeekendWorkers();
 
-        showWorkerList();
+        makeAndShowWorkerList();
     }
 
     public void receiveMonthDay() {
@@ -75,7 +75,7 @@ public class OncallController {
         weekdayWorkers.isContainsAll(weekendWorkers);
     }
 
-    public void showWorkerList() {
+    public void makeAndShowWorkerList() {
         List<Integer> monthCount = List.of(
                 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31
         );
@@ -87,6 +87,7 @@ public class OncallController {
 
         makeWeekList(month, dayCount);
         makeWorkerList(dayCount);
+        showWorkerList();
     }
 
     public void makeWeekList(int month, int dayCount) {
@@ -123,5 +124,9 @@ public class OncallController {
             }
             workerList.add(name);
         }
+    }
+
+    public void showWorkerList() {
+
     }
 }
