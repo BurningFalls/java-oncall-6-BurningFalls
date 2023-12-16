@@ -23,8 +23,7 @@ public class OncallController {
 
     public void startOnCall() {
         receiveMonthDay();
-        receiveWeekdayWorkers();
-        receiveWeekendWorkers();
+        receiveWorkers();
 
         makeAndShowWorkerList();
     }
@@ -44,13 +43,14 @@ public class OncallController {
         }
     }
 
-    public void receiveWeekdayWorkers() {
+    public void receiveWorkers() {
         boolean successFlag = false;
 
         while(!successFlag) {
             try {
-                String input = InputView.inputWeekdayWorkers();
-                weekdayWorkers = new Workers(input);
+                receiveWeekdayWorkers();
+                receiveWeekendWorkers();
+                isWorkersValidate();
 
                 successFlag = true;
             } catch (IllegalArgumentException e) {
@@ -59,20 +59,14 @@ public class OncallController {
         }
     }
 
+    public void receiveWeekdayWorkers() {
+        String input = InputView.inputWeekdayWorkers();
+        weekdayWorkers = new Workers(input);
+    }
+
     public void receiveWeekendWorkers() {
-        boolean successFlag = false;
-
-        while(!successFlag) {
-            try {
-                String input = InputView.inputWeekendWorkers();
-                weekendWorkers = new Workers(input);
-                isWorkersValidate();
-
-                successFlag = true;
-            } catch (IllegalArgumentException e) {
-                System.out.println(e.getMessage());
-            }
-        }
+        String input = InputView.inputWeekendWorkers();
+        weekendWorkers = new Workers(input);
     }
 
     public void isWorkersValidate() {
