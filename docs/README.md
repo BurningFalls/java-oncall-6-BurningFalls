@@ -11,7 +11,7 @@
 - [X] 월과 시작 요일 입력받기: OncallController.receiveMonthDay
 - [] 평일 비상 근무 순서 입력받기: InputView.inputWeekdayWorkers
 - [] 휴일 비상 근무 순서 입력받기: InputView.inputWeekendWorkers
-- [] Workers 입력이 유효한 형식인지 확인: Workers.isValidInput
+- [X] Workers 입력이 유효한 형식인지 확인: Workers.isValidInput
 - [] Workers 입력을 콤마 기준으로 분리하기: Workers.parseWithComma
 - [] 근무자의 이름이 최대 5자 이하인지 확인: Workers.isNameUnder5Char
 - [] 근무자의 닉네임이 중복되지 않는지 확인: Workers.isNameDuplicate
