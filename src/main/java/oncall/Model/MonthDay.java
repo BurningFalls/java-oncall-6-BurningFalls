@@ -38,6 +38,7 @@ public class MonthDay {
         String monthString = monthDay.get(0);
         int month = isNumeric(monthString);
         String day = monthDay.get(1);
+        isMonth1to12(month);
     }
 
     public void isLengthTwo(List<String> monthDay) {
@@ -46,13 +47,17 @@ public class MonthDay {
         }
     }
 
-
-
     public int isNumeric(String input) {
         try {
             return Integer.parseInt(input);
         } catch (NumberFormatException e) {
             throw new IllegalArgumentException("[ERROR] 월 입력값이 숫자가 아닙니다.");
+        }
+    }
+
+    public void isMonth1to12(int month) {
+        if (month < 1 || month > 12) {
+            throw new IllegalArgumentException("[ERROR] 월 입력값이 1 이상 12 이하의 숫자가 아닙니다.");
         }
     }
 }
