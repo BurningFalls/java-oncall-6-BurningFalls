@@ -12,9 +12,9 @@ public class WorkerList {
     public WorkerList(String input) {
         isValidInput(input);
         List<String> workerList = parseWithComma(input);
-//        validate(workerList);
-//
-//        this.workerList = workerList;
+        validate(workerList);
+
+        this.workerList = workerList;
     }
 
     public void isValidInput(String input) {
@@ -33,5 +33,15 @@ public class WorkerList {
                 .map(String::trim)
                 .filter(str -> !str.isEmpty())
                 .collect(Collectors.toList());
+    }
+
+    public void validate(List<String> workerList) {
+        isCount5to35(workerList);
+    }
+
+    public void isCount5to35(List<String> workerList) {
+        if (workerList.size() < 5 || workerList.size() > 35) {
+            throw new IllegalArgumentException("[ERROR] 근무자는 5명 이상 35명 이하여야 합니다.");
+        }
     }
 }
