@@ -3,7 +3,7 @@
 - [X] oncall 시작하기: OncallController.startOnCall
 - [] 월과 시작 요일 입력 받기: InputView.inputMonthDay
 - [X] 월과 요일 입력이 유효한 형식인지 확인: MonthDay.isValidInput
-- [] 분리했을 때 길이가 2인지 확인: MonthDay.isLengthTwo
+- [X] 분리했을 때 길이가 2인지 확인: MonthDay.isLengthTwo
 - [X] 월과 요일 입력을 콤마 기준으로 분리하기: MonthDay.parseWithComma
 - [] 월이 1부터 12 사이의 숫자인지 확인: MonthDay.isMonth1to12
 - [] 요일이 맞는 형식인지 확인: MonthDay.isDayValidate

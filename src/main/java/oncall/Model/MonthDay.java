@@ -10,7 +10,7 @@ public class MonthDay {
     public MonthDay(String input) {
         isValidInput(input);
         List<String> monthDay = parseWithComma(input);
-//        validate(monthDay);
+        validate(monthDay);
 //
 //        this.monthDay = monthDay;
     }
@@ -32,5 +32,15 @@ public class MonthDay {
                 .filter(str -> !str.isEmpty())
                 // .map(Integer::parseInt)
                 .collect(Collectors.toList());
+    }
+
+    public void validate(List<String> monthDay) {
+        isLengthTwo(monthDay);
+    }
+
+    public void isLengthTwo(List<String> monthDay) {
+        if (monthDay.size() != 2) {
+            throw new IllegalArgumentException("[ERROR] 문자열의 형태가 유효하지 않습니다.");
+        }
     }
 }
