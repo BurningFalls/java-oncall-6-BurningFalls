@@ -13,7 +13,6 @@ public class OncallController {
         receiveMonthDay();
         receiveWeekdayWorkers();
         receiveWeekendWorkers();
-        isWorkersValidate();
     }
 
     public void receiveMonthDay() {
@@ -53,6 +52,7 @@ public class OncallController {
             try {
                 String input = InputView.inputWeekendWorkers();
                 weekendWorkers = new Workers(input);
+                isWorkersValidate();
 
                 successFlag = true;
             } catch (IllegalArgumentException e) {
@@ -62,7 +62,7 @@ public class OncallController {
     }
 
     public void isWorkersValidate() {
-
+        weekdayWorkers.isSameLength(weekendWorkers);
     }
 
 

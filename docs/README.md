@@ -20,6 +20,7 @@
 - [X] 휴일 비상 근무 순서 입력받기: InputView.receiveWeekendWorkers
 - [X] 평일 비상 근무와 휴일 비상 근무의 길이가 일치하는지: Workers.isSameLength
 - [] 평일 비상 근무와 휴일 비상 근무자 명단 구성이 일치하는지: Workers.isContainsAll
+- [X] 평일 및 휴일 비상 근무 입력이 유효한지: OncallController.isWorkersValidate
 - [] 평일 휴일 List 만들기: OncallController.makeWeekList
 - [] 근무 명단 만들기: OncallController.makeWorkerList
 - [] 서로 위치 바꾸기: OncallController.changePosition
