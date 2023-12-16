@@ -5,6 +5,7 @@ import oncall.Model.MonthDay;
 import oncall.Model.Workers;
 import oncall.View.InputView;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class OncallController {
@@ -76,7 +77,10 @@ public class OncallController {
         );
         int month = monthDay.getMonth();
         int dayCount = monthCount.get(month - 1);
-
+        weekList = new ArrayList<>();
+        for (int i = 1; i <= dayCount; i++) {
+            weekList.add(0);
+        }
 
         calculateWeekList(month, dayCount);
     }
@@ -85,6 +89,10 @@ public class OncallController {
         for (int day = 1; day <= dayCount; day++) {
             boolean isHoliday = Holiday.isContains(month, day);
             boolean isWeekend = monthDay.isWeekend(day);
+
+            if (isHoliday || isWeekend) {
+                weekList.set(day - 1, 1);
+            }
         }
     }
 }
