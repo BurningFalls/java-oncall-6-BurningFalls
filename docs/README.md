@@ -9,7 +9,7 @@
 - [X] 월이 1부터 12 사이의 숫자인지 확인: MonthDay.isMonth1to12
 - [X] 요일이 맞는 형식인지 확인: MonthDay.isDayValidate
 - [X] 월과 시작 요일 입력받기: OncallController.receiveMonthDay
-- [] 평일 비상 근무 순서 입력받기: InputView.inputWeekdayWorkers
+- [X] 평일 비상 근무 순서 입력받기: InputView.inputWeekdayWorkers
 - [] 휴일 비상 근무 순서 입력받기: InputView.inputWeekendWorkers
 - [X] Workers 입력이 유효한 형식인지 확인: Workers.isValidInput
 - [X] Workers 입력을 콤마 기준으로 분리하기: Workers.parseWithComma
