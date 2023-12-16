@@ -1,5 +1,6 @@
 package oncall.Controller;
 
+import oncall.Enum.Holiday;
 import oncall.Model.MonthDay;
 import oncall.Model.Workers;
 import oncall.View.InputView;
@@ -76,10 +77,14 @@ public class OncallController {
         int month = monthDay.getMonth();
         int dayCount = monthCount.get(month - 1);
 
+
         calculateWeekList(month, dayCount);
     }
 
     public void calculateWeekList(int month, int dayCount) {
-
+        for (int day = 1; day <= dayCount; day++) {
+            boolean isHoliday = Holiday.isContains(month, day);
+            boolean isWeekend = monthDay.isWeekend(day);
+        }
     }
 }

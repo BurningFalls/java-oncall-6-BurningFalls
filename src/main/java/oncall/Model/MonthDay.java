@@ -7,6 +7,9 @@ import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
 public class MonthDay {
+    private static final List<String> dayList = List.of(
+            "월", "화", "수", "목", "금", "토", "일"
+    );
     private int month;
     private String day;
 
@@ -67,12 +70,19 @@ public class MonthDay {
     }
 
     public void isDayValidate(String day) {
-        List<String> dayList = List.of(
-                "월", "화", "수", "목", "금", "토", "일"
-        );
         if (!dayList.contains(day)) {
             throw new IllegalArgumentException("[ERROR] 요일 입력 형식이 잘못되었습니다.");
         }
+    }
+
+    public boolean isWeekend(int dayNumber) {
+        int index = dayList.indexOf(day);
+        index = (index + dayNumber - 1) % 7;
+        String nextDay = dayList.get(index);
+        if (nextDay.equals("토") || nextDay.equals("일")) {
+            return true;
+        }
+        return false;
     }
 
     public int getMonth() {

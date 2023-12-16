@@ -22,6 +22,8 @@
 - [X] 평일 비상 근무와 휴일 비상 근무자 명단 구성이 일치하는지: Workers.isContainsAll
 - [X] 평일 및 휴일 비상 근무 입력이 유효한지: OncallController.isWorkersValidate
 - [X] 공휴일에 일치하는 날짜인지 확인: Holiday.isContains
+- [X] 주말인지 계산하기: MonthDay.isWeekend
+- [] 평일 휴일 List 계산하기: OncallController.calculateWeekList
 - [] 평일 휴일 List 만들기: OncallController.makeWeekList
 - [] 근무 명단 만들기: OncallController.makeWorkerList
 - [] 서로 위치 바꾸기: OncallController.changePosition
