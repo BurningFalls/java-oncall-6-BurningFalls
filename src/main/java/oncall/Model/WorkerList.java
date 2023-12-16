@@ -1,7 +1,9 @@
 package oncall.Model;
 
 import java.util.Arrays;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
@@ -38,6 +40,7 @@ public class WorkerList {
     public void validate(List<String> workerList) {
         isCount5to35(workerList);
         isNameUnder5Char(workerList);
+        isNameDuplicate(workerList);
     }
 
     public void isCount5to35(List<String> workerList) {
@@ -55,4 +58,12 @@ public class WorkerList {
         }
     }
 
+    public void isNameDuplicate(List<String> workerList) {
+        Set<String> names = new HashSet<>();
+        for (String name : workerList) {
+            if (!names.add(name)) {
+                throw new IllegalArgumentException("[ERROR] 중복 닉네임이 존재합니다.");
+            }
+        }
+    }
 }
