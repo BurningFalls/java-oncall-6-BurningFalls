@@ -34,7 +34,7 @@ public class OncallController {
 
                 successFlag = true;
             } catch (IllegalArgumentException e) {
-                System.out.println(e.getMessage());
+                OutputView.printErrorMessage(e.getMessage());
             }
         }
     }
@@ -50,7 +50,7 @@ public class OncallController {
 
                 successFlag = true;
             } catch (IllegalArgumentException e) {
-                System.out.println(e.getMessage());
+                OutputView.printErrorMessage(e.getMessage());
             }
         }
     }

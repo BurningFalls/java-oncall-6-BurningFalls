@@ -33,3 +33,4 @@
 - [X] 근무 명단 유효성 체크하기: OncallController.isWorkerListValidate
 - [X] 근무 명단 전체 내용 보여주기: OncallController.makeAndShowWorkerList
 - [X] 근무 명단 출력하기: OutputView.printWorkerList
+- [X] 에러 메시지 출력하기: OutputView.printErrorMessage

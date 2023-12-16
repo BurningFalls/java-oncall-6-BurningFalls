@@ -7,6 +7,10 @@ import java.util.List;
 
 public class OutputView {
 
+    public static void printErrorMessage(String errorMessage) {
+        System.out.println(errorMessage);
+    }
+
     public static void printWorkerList(MonthDay monthDay, List<Integer> weekList, List<String> workerList) {
         int month = monthDay.getMonth();
         String dayStart = monthDay.getDay();
