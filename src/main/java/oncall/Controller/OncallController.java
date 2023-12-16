@@ -156,14 +156,14 @@ public class OncallController {
 //        workerList.set(nextIndex, tmp);
 //    }
 
-//    public String findNextName(int index) {
-//        String name = workerList.get(index);
-//        boolean isWeekday = (weekList.get(index) == Constants.WEEKDAY);
-//        if (isWeekday) {
-//            return weekdayWorkers.getNextName(name);
-//        }
-//        return weekendWorkers.getNextName(name);
-//    }
+    public String findNextName(int index) {
+        String name = workerList.get(index);
+        boolean isWeekday = (weekList.get(index) == Constants.WEEKDAY);
+        if (isWeekday) {
+            return weekdayWorkers.getNextName(name);
+        }
+        return weekendWorkers.getNextName(name);
+    }
 
     public int getNextIndex(boolean isWeekday, int index) {
         int month = monthDay.getMonth();
