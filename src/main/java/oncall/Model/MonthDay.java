@@ -30,17 +30,29 @@ public class MonthDay {
         return Arrays.stream(input.split(","))
                 .map(String::trim)
                 .filter(str -> !str.isEmpty())
-                // .map(Integer::parseInt)
                 .collect(Collectors.toList());
     }
 
     public void validate(List<String> monthDay) {
         isLengthTwo(monthDay);
+        String monthString = monthDay.get(0);
+        int month = isNumeric(monthString);
+        String day = monthDay.get(1);
     }
 
     public void isLengthTwo(List<String> monthDay) {
         if (monthDay.size() != 2) {
             throw new IllegalArgumentException("[ERROR] 문자열의 형태가 유효하지 않습니다.");
+        }
+    }
+
+
+
+    public int isNumeric(String input) {
+        try {
+            return Integer.parseInt(input);
+        } catch (NumberFormatException e) {
+            throw new IllegalArgumentException("[ERROR] 월 입력값이 숫자가 아닙니다.");
         }
     }
 }
