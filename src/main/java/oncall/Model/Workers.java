@@ -13,8 +13,8 @@ public class Workers {
 
     public Workers(String input) {
         isValidInput(input);
-        List<String> workerList = parseWithComma(input);
-        validate(workerList);
+        List<String> workers = parseWithComma(input);
+        validate(workers);
 
         this.workers = workers;
     }
