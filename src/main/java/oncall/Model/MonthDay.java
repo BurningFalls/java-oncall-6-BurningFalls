@@ -1,5 +1,7 @@
 package oncall.Model;
 
+import oncall.Constant.Constants;
+
 import java.util.Arrays;
 import java.util.List;
 import java.util.regex.Matcher;
@@ -7,9 +9,6 @@ import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
 public class MonthDay {
-    private static final List<String> dayList = List.of(
-            "월", "화", "수", "목", "금", "토", "일"
-    );
     private int month;
     private String day;
 
@@ -70,15 +69,15 @@ public class MonthDay {
     }
 
     public void isDayValidate(String day) {
-        if (!dayList.contains(day)) {
+        if (!Constants.DAYLIST.contains(day)) {
             throw new IllegalArgumentException("[ERROR] 요일 입력 형식이 잘못되었습니다.");
         }
     }
 
     public boolean isWeekend(int dayNumber) {
-        int index = dayList.indexOf(day);
+        int index = Constants.DAYLIST.indexOf(day);
         index = (index + dayNumber - 1) % 7;
-        String nextDay = dayList.get(index);
+        String nextDay = Constants.DAYLIST.get(index);
         if (nextDay.equals("토") || nextDay.equals("일")) {
             return true;
         }
@@ -87,5 +86,9 @@ public class MonthDay {
 
     public int getMonth() {
         return month;
+    }
+
+    public String getDay() {
+        return day;
     }
 }

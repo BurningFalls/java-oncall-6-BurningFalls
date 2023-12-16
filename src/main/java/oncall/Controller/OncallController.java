@@ -5,11 +5,16 @@ import oncall.Enum.Holiday;
 import oncall.Model.MonthDay;
 import oncall.Model.Workers;
 import oncall.View.InputView;
+import oncall.View.OutputView;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class OncallController {
+    private static final List<Integer> monthCount = List.of(
+            31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31
+    );
+
     private MonthDay monthDay;
     private Workers weekdayWorkers;
     private Workers weekendWorkers;
@@ -76,9 +81,6 @@ public class OncallController {
     }
 
     public void makeAndShowWorkerList() {
-        List<Integer> monthCount = List.of(
-                31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31
-        );
         int month = monthDay.getMonth();
         int dayCount = monthCount.get(month - 1);
         weekList = new ArrayList<>();
@@ -127,6 +129,6 @@ public class OncallController {
     }
 
     public void showWorkerList() {
-
+        OutputView.printWorkerList(monthDay, workerList);
     }
 }
