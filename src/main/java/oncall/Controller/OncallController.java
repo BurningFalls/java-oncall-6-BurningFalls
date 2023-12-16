@@ -63,6 +63,7 @@ public class OncallController {
 
     public void isWorkersValidate() {
         weekdayWorkers.isSameLength(weekendWorkers);
+        weekdayWorkers.isContainsAll(weekendWorkers);
     }
 
 
