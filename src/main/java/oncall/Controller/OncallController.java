@@ -142,19 +142,19 @@ public class OncallController {
 //        }
 //    }
 
-//    public void changePosition(int index) {
-//        boolean isWeekday = (weekList.get(index) == Constants.WEEKDAY);
-//
-//        int nextIndex = getNextIndex(isWeekday, index);
-//        if (nextIndex == -1) {
-//            String nextName = findNextName(index);
-//            workerList.set(index, nextName);
-//            return;
-//        }
-//        String tmp = workerList.get(index);
-//        workerList.set(index, workerList.get(nextIndex));
-//        workerList.set(nextIndex, tmp);
-//    }
+    public void changePosition(int index) {
+        boolean isWeekday = (weekList.get(index) == Constants.WEEKDAY);
+
+        int nextIndex = getNextIndex(isWeekday, index);
+        if (nextIndex == -1) {
+            String nextName = findNextName(index);
+            workerList.set(index, nextName);
+            return;
+        }
+        String tmp = workerList.get(index);
+        workerList.set(index, workerList.get(nextIndex));
+        workerList.set(nextIndex, tmp);
+    }
 
     public String findNextName(int index) {
         String name = workerList.get(index);
