@@ -12,7 +12,7 @@ public class OutputView {
         String dayStart = monthDay.getDay();
         int dayIndex = Constants.DAYLIST.indexOf(dayStart);
 
-        for (int day = 1; day <= workerList.size(); day++) {
+        for (int day = 1; day < workerList.size(); day++) {
             String realDay = Constants.DAYLIST.get(dayIndex);
             dayIndex = (dayIndex + 1) % 7;
             System.out.println(month + "월 " + day + "일 " + realDay + " " + workerList.get(day));
