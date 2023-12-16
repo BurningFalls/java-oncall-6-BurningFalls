@@ -1,18 +1,19 @@
 package oncall.Controller;
 
 import oncall.Model.MonthDay;
-import oncall.Model.WorkerList;
+import oncall.Model.Workers;
 import oncall.View.InputView;
 
 public class OncallController {
     private MonthDay monthDay;
-    private WorkerList weekdayWorkerList;
-    private WorkerList weekendWorkerList;
+    private Workers weekdayWorkers;
+    private Workers weekendWorkers;
 
     public void startOnCall() {
         receiveMonthDay();
         receiveWeekdayWorkers();
         receiveWeekendWorkers();
+        isWorkersValidate();
     }
 
     public void receiveMonthDay() {
@@ -36,7 +37,7 @@ public class OncallController {
         while(!successFlag) {
             try {
                 String input = InputView.inputWeekdayWorkers();
-                weekdayWorkerList = new WorkerList(input);
+                weekdayWorkers = new Workers(input);
 
                 successFlag = true;
             } catch (IllegalArgumentException e) {
@@ -51,7 +52,7 @@ public class OncallController {
         while(!successFlag) {
             try {
                 String input = InputView.inputWeekendWorkers();
-                weekendWorkerList = new WorkerList(input);
+                weekendWorkers = new Workers(input);
 
                 successFlag = true;
             } catch (IllegalArgumentException e) {
@@ -59,4 +60,10 @@ public class OncallController {
             }
         }
     }
+
+    public void isWorkersValidate() {
+
+    }
+
+
 }
