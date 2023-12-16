@@ -90,7 +90,7 @@ public class OncallController {
 
         makeWeekList(month, dayCount);
         makeWorkerList(dayCount);
-        // isWorkerListValidate();
+        isWorkerListValidate();
         OutputView.printWorkerList(monthDay, weekList, workerList);
     }
 
