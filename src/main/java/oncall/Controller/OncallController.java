@@ -4,10 +4,13 @@ import oncall.Model.MonthDay;
 import oncall.Model.Workers;
 import oncall.View.InputView;
 
+import java.util.List;
+
 public class OncallController {
     private MonthDay monthDay;
     private Workers weekdayWorkers;
     private Workers weekendWorkers;
+    private List<Integer> weekList;
 
     public void startOnCall() {
         receiveMonthDay();
@@ -66,5 +69,17 @@ public class OncallController {
         weekdayWorkers.isContainsAll(weekendWorkers);
     }
 
+    public void makeWeekList() {
+        List<Integer> monthCount = List.of(
+                31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31
+        );
+        int month = monthDay.getMonth();
+        int dayCount = monthCount.get(month - 1);
 
+        calculateWeekList(month, dayCount);
+    }
+
+    public void calculateWeekList(int month, int dayCount) {
+
+    }
 }

@@ -74,4 +74,8 @@ public class MonthDay {
             throw new IllegalArgumentException("[ERROR] 요일 입력 형식이 잘못되었습니다.");
         }
     }
+
+    public int getMonth() {
+        return month;
+    }
 }
