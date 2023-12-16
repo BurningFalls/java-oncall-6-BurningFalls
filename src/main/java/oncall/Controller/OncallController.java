@@ -90,7 +90,8 @@ public class OncallController {
 
         makeWeekList(month, dayCount);
         makeWorkerList(dayCount);
-        showWorkerList();
+        // isWorkerListValidate();
+        OutputView.printWorkerList(monthDay, weekList, workerList);
     }
 
     public void makeWeekList(int month, int dayCount) {
@@ -131,7 +132,48 @@ public class OncallController {
         }
     }
 
-    public void showWorkerList() {
-        OutputView.printWorkerList(monthDay, weekList, workerList);
-    }
+//    public void isWorkerListValidate() {
+//        for (int i = 1; i < workerList.size(); i++) {
+//            String prevName = workerList.get(i - 1);
+//            String curName = workerList.get(i);
+//            if (prevName.equals(curName)) {
+//                changePosition(i);
+//            }
+//        }
+//    }
+
+//    public void changePosition(int index) {
+//        boolean isWeekday = (weekList.get(index) == Constants.WEEKDAY);
+//
+//        int nextIndex = getNextIndex(isWeekday, index);
+//        if (nextIndex == -1) {
+//            String nextName = findNextName(index);
+//            workerList.set(index, nextName);
+//            return;
+//        }
+//        String tmp = workerList.get(index);
+//        workerList.set(index, workerList.get(nextIndex));
+//        workerList.set(nextIndex, tmp);
+//    }
+
+//    public String findNextName(int index) {
+//        String name = workerList.get(index);
+//        boolean isWeekday = (weekList.get(index) == Constants.WEEKDAY);
+//        if (isWeekday) {
+//            return weekdayWorkers.getNextName(name);
+//        }
+//        return weekendWorkers.getNextName(name);
+//    }
+
+//    public int getNextIndex(boolean isWeekday, int index) {
+//        int month = monthDay.getMonth();
+//        int dayCount = monthCount.get(month - 1);
+//        for (int i = index + 1; i <= dayCount; i++) {
+//            boolean flag = (weekList.get(i) == Constants.WEEKDAY);
+//            if (isWeekday == flag) {
+//                return i;
+//            }
+//        }
+//        return -1;
+//    }
 }

@@ -88,4 +88,10 @@ public class Workers {
     public int getSize() {
         return workers.size();
     }
+
+    public String getNextName(String name) {
+        int index = workers.indexOf(name);
+        index = (index + 1) % workers.size();
+        return workers.get(index);
+    }
 }
