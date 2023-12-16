@@ -72,4 +72,12 @@ public class Workers {
             throw new IllegalArgumentException("[ERROR] 평일과 휴일 비상 근무자 순번의 길이가 일치하지 않습니다.");
         }
     }
+
+    public void isContainsAll(Workers other) {
+        boolean flag1 = new HashSet<>(this.workers).containsAll(other.workers);
+        boolean flag2 = new HashSet<>(other.workers).containsAll(this.workers);
+        if (!flag1 || !flag2) {
+            throw new IllegalArgumentException("[ERROR] 평일과 휴일 비상 근무자 명단이 일치하지 않습니다.");
+        }
+    }
 }
