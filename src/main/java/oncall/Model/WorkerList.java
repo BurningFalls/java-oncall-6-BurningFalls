@@ -11,7 +11,7 @@ public class WorkerList {
 
     public WorkerList(String input) {
         isValidInput(input);
-//        List<String> workerList = parseWithComma(input);
+        List<String> workerList = parseWithComma(input);
 //        validate(workerList);
 //
 //        this.workerList = workerList;
@@ -28,11 +28,10 @@ public class WorkerList {
         }
     }
 
-//    public List<String> parseWithComma(String input) {
-//        return Arrays.stream(input.split(","))
-//                .map(String::trim)
-//                .filter(str -> !str.isEmpty())
-//                // .map(Integer::parseInt)
-//                .collect(Collectors.toList());
-//    }
+    public List<String> parseWithComma(String input) {
+        return Arrays.stream(input.split(","))
+                .map(String::trim)
+                .filter(str -> !str.isEmpty())
+                .collect(Collectors.toList());
+    }
 }
