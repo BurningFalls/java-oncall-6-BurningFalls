@@ -18,7 +18,7 @@
 - [X] 근무자가 최소 5명 최대 35명인지 확인: Workers.isCount5to35
 - [X] 평일 비상 근무 순서 입력받기: InputView.receiveWeekdayWorkers
 - [X] 휴일 비상 근무 순서 입력받기: InputView.receiveWeekendWorkers
-- [] 평일 비상 근무와 휴일 비상 근무의 길이가 일치하는지: Workers.isSameLength
+- [X] 평일 비상 근무와 휴일 비상 근무의 길이가 일치하는지: Workers.isSameLength
 - [] 평일 비상 근무와 휴일 비상 근무자 명단 구성이 일치하는지: Workers.isContainsAll
 - [] 평일 휴일 List 만들기: OncallController.makeWeekList
 - [] 근무 명단 만들기: OncallController.makeWorkerList

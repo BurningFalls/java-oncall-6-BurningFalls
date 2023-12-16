@@ -66,4 +66,10 @@ public class Workers {
             }
         }
     }
+
+    public void isSameLength(Workers other) {
+        if (this.workers.size() != other.workers.size()) {
+            throw new IllegalArgumentException("[ERROR] 평일과 휴일 비상 근무자 순번의 길이가 일치하지 않습니다.");
+        }
+    }
 }
