@@ -84,6 +84,7 @@ public class OncallController {
         int month = monthDay.getMonth();
         int dayCount = monthCount.get(month - 1);
         weekList = new ArrayList<>();
+        weekList.add(0);
         workerList = new ArrayList<>();
         workerList.add("");
 
@@ -93,7 +94,7 @@ public class OncallController {
     }
 
     public void makeWeekList(int month, int dayCount) {
-        for (int i = 0; i <= dayCount; i++) {
+        for (int i = 1; i <= dayCount; i++) {
             weekList.add(0);
         }
 
@@ -102,11 +103,13 @@ public class OncallController {
 
     public void calculateWeekList(int month, int dayCount) {
         for (int day = 1; day <= dayCount; day++) {
-            boolean isHoliday = Holiday.isContains(month, day);
             boolean isWeekend = monthDay.isWeekend(day);
-
-            if (isHoliday || isWeekend) {
+            boolean isHoliday = Holiday.isContains(month, day);
+            if (!isWeekend && isHoliday) {
                 weekList.set(day, 1);
+            }
+            else if (isWeekend) {
+                weekList.set(day, 2);
             }
         }
     }
@@ -120,7 +123,7 @@ public class OncallController {
             if (weekList.get(day) == Constants.WEEKDAY) {
                 name = weekdayWorkers.getWorker(index1);
                 index1 = (index1 + 1) % length;
-            } else if (weekList.get(day) == Constants.WEEKEND) {
+            } else if (weekList.get(day) == Constants.WEEKDAY_HOLIDAY || weekList.get(day) == Constants.WEEKEND) {
                 name = weekendWorkers.getWorker(index2);
                 index2 = (index2 + 1) % length;
             }
@@ -129,6 +132,6 @@ public class OncallController {
     }
 
     public void showWorkerList() {
-        OutputView.printWorkerList(monthDay, workerList);
+        OutputView.printWorkerList(monthDay, weekList, workerList);
     }
 }
