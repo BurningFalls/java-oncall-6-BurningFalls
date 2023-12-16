@@ -16,6 +16,8 @@
 - [X] 근무자의 이름이 최대 5자 이하인지 확인: Workers.isNameUnder5Char
 - [X] 근무자의 닉네임이 중복되지 않는지 확인: Workers.isNameDuplicate
 - [X] 근무자가 최소 5명 최대 35명인지 확인: Workers.isCount5to35
+- [X] 평일 비상 근무 순서 입력받기: InputView.receiveWeekdayWorkers
+- [] 휴일 비상 근무 순서 입력받기: InputView.receiveWeekendWorkers
 - [] 평일 비상 근무와 휴일 비상 근무의 길이가 일치하는지: Workers.isSameLength
 - [] 평일 비상 근무와 휴일 비상 근무자 명단 구성이 일치하는지: Workers.isContainsAll
 - [] 평일 휴일 List 만들기: OncallController.makeWeekList
